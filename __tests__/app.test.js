@@ -30,4 +30,11 @@ describe('app routes', () => {
 
     expect(response.text).toEqual('<h1>green</h1>');
   });
+
+  it('should return html with an h1 and the word blue', async() => {
+    const response = await request(app)
+      .get('/blue');
+
+    expect(response.text).toEqual('<h1>blue</h1>');
+  });
 });
